@@ -1,0 +1,11 @@
+<div class="crud__container m-auto p-lg-5 p-4 rounded shadow">
+    <h2 align="center" class="p-2">You can trace a route here</h2>
+    <div class="controls">
+        <div id="geocoder" #asGeocoder class="py-2 d-inline-flex"></div> 
+        <button class="btn btn-success py-2 my-2" (click)="getRoute()"><i class="fas fa-map-marker-alt"></i> Get Route</button>
+    </div>
+   
+    <div class="map__container">
+        <div id="map"></div>
+    </div>
+</div>

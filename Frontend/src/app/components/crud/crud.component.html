@@ -1,0 +1,54 @@
+<div class="crud__container m-auto p-lg-5 p-4 rounded shadow">
+    <div class="content"  [ngClass]="createMode ? 'visible' : 'hidden'">
+        <form [formGroup]="customersForm" (ngSubmit)="addCustomer()">
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label for="name">Full Name</label>
+                    <input type="text" class="form-control" id="name" placeholder="Andrés Gonzales" formControlName="name">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="phone">Phone</label>
+                    <input type="text" class="form-control" id="phone" placeholder="+57 3103224120" formControlName="phone">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="city">City</label>
+                    <input type="text" class="form-control" id="city" placeholder="City / Province" formControlName="city">
+                </div>
+                <div class="form-group col-md-12">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" placeholder="Email" formControlName="email">
+                </div>
+            </div>
+            <button type="submit" class="btn btn-success">{{createText}}</button>
+        </form>
+    </div>
+
+    <div class="content">
+        <div class="table-responsive">
+            <div class="py-2"> <button type="submit" class="btn btn-primary float-right my-2" (click)="createCustomer()"> <i class="fas" [ngClass]="createMode ? 'fa-times-circle' : 'fa-plus-circle'">&nbsp;</i> {{createMode ? 'Close Form' : 'Add Reader'}}</button></div>
+            <table class="table">
+                <tr>
+                    <th>Full Name</th>
+                    <th>Phone</th>
+                    <th>City</th>
+                    <th>Email</th>
+                    <th>Actions</th>
+                </tr>
+                <tr *ngFor="let customer of customers">
+                    <td>{{customer.name}}</td>
+                    <td>{{customer.phone}}</td>
+                    <td>{{customer.city}}</td>
+                    <td>{{customer.email}}</td>
+                    <td class="border px-4 py-2 centered">
+                        <i class="fas fa-edit pointer mr-1" (click)="editCustomer(customer.id)"></i>
+                        <i
+                          class="fas fa-trash pointer mr-1"
+                          (click)="deleteCustomer(customer.id)"
+                        ></i>
+                      </td>
+                </tr>
+            </table>
+          </div>
+    </div>
+
+</div>

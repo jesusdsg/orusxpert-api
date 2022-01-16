@@ -1,0 +1,49 @@
+/* You can add global styles to this file, and also import other style files */
+#header__logo {
+    height: 50px;
+    width: auto;
+}
+
+.crud__container {
+    background-color: #fff;
+    width: 100%;
+}
+
+.visible {
+    display: inherit;
+}
+
+.hidden {
+    display: none;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.mr-1 {
+    margin-right: 1rem;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }  
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  } 
+::-webkit-scrollbar-thumb {
+    background: #28a745;
+  }
+::-webkit-scrollbar-thumb:hover {
+    background: #1f8b38;
+  }
+
+@media screen and (max-width: 600px) {
+    .crud__container {
+        width: 90%;
+    }
+    .btn {
+        width: 100%;
+    }
+}
